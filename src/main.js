@@ -14,6 +14,7 @@ import Footer from './components/footer';
 import Row from './components/row';
 import Col from './components/col';
 import Icon from './components/icon';
+import Button from './components/button';
 
 Vue.component('x-layout', Layout);
 Vue.component('x-header', Header);
@@ -23,6 +24,7 @@ Vue.component('x-footer', Footer);
 Vue.component('x-row', Row);
 Vue.component('x-col', Col);
 Vue.component('x-icon', Icon);
+Vue.component('x-button', Button);
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);

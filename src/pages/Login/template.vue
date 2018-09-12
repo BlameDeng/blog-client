@@ -7,8 +7,10 @@
                     <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}">
                         <div class="header-inner">
                             <div class="logo">LET'S SHARE</div>
-                            <div class="user-bar">
-                                <x-icon name="blog" class="x-icon"></x-icon><img src="../../assets/default.png" alt="">
+                            <p>精品博客汇聚</p>
+                            <div class="btn">
+                                <x-button class="x-button">立即登录</x-button>
+                                <x-button class="x-button">注册账号</x-button>
                             </div>
                         </div>
                     </x-col>
@@ -19,7 +21,7 @@
                 <x-row x-height="100%">
                     <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
                     <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}" x-height="100%">
-                        <div class="content-inner" style="border:1px solid red;height:800px;">
+                        <div class="content-inner" style="border:1px solid red;height:100px;">
                         </div>
                     </x-col>
                     <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>

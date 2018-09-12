@@ -6,6 +6,24 @@ import router from './router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+import Layout from './components/layout';
+import Header from './components/header';
+import Sider from './components/sider';
+import Content from './components/content';
+import Footer from './components/footer';
+import Row from './components/row';
+import Col from './components/col';
+import Icon from './components/icon';
+
+Vue.component('x-layout', Layout);
+Vue.component('x-header', Header);
+Vue.component('x-sider', Sider);
+Vue.component('x-content', Content);
+Vue.component('x-footer', Footer);
+Vue.component('x-row', Row);
+Vue.component('x-col', Col);
+Vue.component('x-icon', Icon);
+
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 

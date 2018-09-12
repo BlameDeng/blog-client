@@ -19,8 +19,7 @@
                 <x-row x-height="100%">
                     <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
                     <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}" x-height="100%">
-                        <div class="content-inner" style="border:1px solid red;">
-                            <el-button @click="onClick">默认按钮</el-button>
+                        <div class="content-inner" style="border:1px solid red;height:800px;">
                         </div>
                     </x-col>
                     <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>

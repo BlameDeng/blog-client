@@ -81,7 +81,7 @@
 </script>
 <style lang="scss" scoped>
     @import '../assets/base.scss';
-    $font-size:14px;
+    $font-size:18px;
     $toast-min-height:40px;
     $toast-bg:rgba(0, 0, 0, 0.75);
     $animation-duration:0.5s;
@@ -98,7 +98,7 @@
     @keyframes slide-down {
         from {
             opacity: 0;
-            transform: translateY(calc(-100% - 50px));
+            transform: translateY(calc(-100% - 75px));
         }
         to {
             opacity: 1;
@@ -118,7 +118,7 @@
         left: 50%;
         transform: translateX(-50%);
         &.toast-position-top {
-            top: 50px;
+            top: 75px;
             >.toast {
                 // border-top-left-radius: 0;
                 // border-top-right-radius: 0;
@@ -175,7 +175,7 @@
             background: #fff;
             border-radius: 4px;
             // box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-            padding: 0 16px;
+            padding: 25px 16px;
             >.slot-wrapper {
                 // display: flex;
                 // justify-content: center;

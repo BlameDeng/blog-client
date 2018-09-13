@@ -8,8 +8,8 @@
                             <div class="logo">LET'S SHARE</div>
                             <p>分享才是网络精神</p>
                             <div class="btn">
-                                <x-button class="x-button" @click="currentForm=true">登 录</x-button>
-                                <x-button class="x-button active" @click="currentForm=false">注 册</x-button>
+                                <x-button class="x-button">登 录</x-button>
+                                <x-button class="x-button active">注 册</x-button>
                             </div>
                         </div>
                     </x-col>
@@ -22,11 +22,11 @@
                             <form class="x-form">
                                 <div class="form-row">
                                     <p>用户名</p>
-                                    <x-input class="x-input"></x-input>
+                                    <x-input class="x-input" v-model="username"></x-input>
                                 </div>
                                 <div class="form-row">
                                     <p>密码</p>
-                                    <x-input class="x-input"></x-input>
+                                    <x-input class="x-input" v-model="password"></x-input>
                                 </div>
                                 <div class="form-row">
                                     <x-button @click="onClick">立即注册</x-button>

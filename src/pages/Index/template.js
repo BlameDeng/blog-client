@@ -1,14 +1,17 @@
-import request from '@/helpers/request.js';
-import auth from '@/api/auth.js';
-import blog from '@/api/blog.js';
-
-
+import Vue from 'vue';
+import { mapState, mapActions } from 'vuex';
 export default {
     name: 'Index',
-    data() {
-        return {
-            msg: 'Welcome to Your Vue.js App'
-        }
+    data() { return {} },
+    computed: {
+        ...mapState({
+            user: state => state.auth.user,
+            isLogin: state => state.auth.isLogin
+        })
+    },
+    created() {
+        console.log(this.user);
+        console.log(this.isLogin);
     },
     methods: {
         onClick() {

@@ -22,24 +22,18 @@ export default {
         ...mapGetters(['both', 'bothtwo', 'getByIndex'])
     },
     methods: {
-        ...mapMutations(['increment','unshift','push']),
+        ...mapMutations(['increment', 'unshift', 'push']),
         onClick() {
-            // this.formValidator();
-            this.$store.commit('increment', 10);
-            this.$store.commit('unshift', 'aaa');
-            this.$store.commit({type:'push',string:'string'})
-            this.increment(20);
-            this.unshift('bbb');
-            this.push({string:'ccc'});
-            console.log(this.count);
-            console.log(this.num);
-            console.log(this.arrary);
-            console.log(this.$store.getters.both);
-            console.log(this.$store.getters.bothtwo);
-            console.log(this.$store.getters.getByIndex(2));
-            console.log(this.both);
-            console.log(this.bothtwo);
-            console.log(this.getByIndex(2));
+            this.formValidator();
+            // this.$store.commit('increment', 10);
+            // this.$store.commit('unshift', 'aaa');
+            // this.$store.commit({type:'push',string:'string'})
+            // this.increment(20);
+            // this.unshift('bbb');
+            // this.push({string:'ccc'});
+        },
+        onPushToLogin() {
+            this.$router.push({ path: '/login' });
         },
         formValidator() {
             let username = this.username;

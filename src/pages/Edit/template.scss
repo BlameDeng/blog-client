@@ -2,32 +2,4 @@
 #edit {
     font-family: $font;
     min-width: 250px;
-    .x-header {
-        background: $bcolor3;
-        color: #fff;
-        padding: 10px 0;
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .logo {
-                font-size: 40px;
-                font-weight: bold;
-            }
-            .user-bar {
-                display: flex;justify-content:center;align-items:center;
-                img {
-                    width: 40px;
-                    border-radius: 50%;
-                    vertical-align: middle;
-                }
-                .x-icon{width: 20px;height: 20px;margin-right: 10px;}
-            }
-        }
-    }
-    .x-footer {
-        background: $bcolor5;
-        color: $txtcolor2;font-size: 12px;padding: 16px 0;
-        p{text-align: center;}
-    }
 }

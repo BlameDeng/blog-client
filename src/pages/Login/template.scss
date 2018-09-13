@@ -2,27 +2,6 @@
 #login {
     font-family: $font;
     min-width: 250px;
-    .x-header {
-        background: $bcolor3;
-        color: #fff;
-        padding: 30px 0 10px 0;
-        .header-inner {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            >.logo {
-                font-size: 40px;
-                font-weight: bold;
-            }
-            >.login-title {
-                font-size: 16px;
-                display: flex;
-                margin-left: 5px;
-                padding-left: 5px;
-                border-left: 1px solid #fff;
-            }
-        }
-    }
     .x-content {
         .content-inner {
             width: 80%;
@@ -53,15 +32,6 @@
                     }
                 }
             }
-        }
-    }
-    .x-footer {
-        background: $bcolor5;
-        color: $txtcolor2;
-        font-size: 12px;
-        padding: 16px 0;
-        p {
-            text-align: center;
         }
     }
 }

@@ -1,8 +1,10 @@
 <template>
     <div class="layout-content" :style="xStyle">
-        <x-row>
-            <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
+        <x-row class="content-inner">
+            <x-col class="content-inner" span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                 <slot></slot>
+            </x-col>
+            <x-col span="2" offset="0" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}">
             </x-col>
         </x-row>
     </div>
@@ -29,5 +31,10 @@
 <style lang="scss" scoped>
     .layout-content {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        .content-inner {
+            flex-grow: 1;
+        }
     }
 </style>

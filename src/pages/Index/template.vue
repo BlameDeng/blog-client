@@ -3,7 +3,10 @@
         <x-layout x-height="100vh">
             <x-header></x-header>
             <x-content>
-                <div class="content-inner" style="border:1px solid red;">
+                <div class="content-inner">
+                    <div class="mask" v-if="!isLogin">
+                        跳转注册登录
+                    </div>
                 </div>
             </x-content>
             <x-footer>

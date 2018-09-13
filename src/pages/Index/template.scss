@@ -2,4 +2,13 @@
 #index {
     font-family: $font;
     min-width: 250px;
+    .content-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .mask {
+            height: 100%;
+            flex-grow: 1;
+        }
+    }
 }

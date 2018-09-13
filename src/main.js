@@ -16,6 +16,8 @@ import Col from './components/col';
 import Icon from './components/icon';
 import Button from './components/button';
 import Input from './components/input';
+import Group from './components/group';
+
 
 Vue.component('x-layout', Layout);
 Vue.component('x-header', Header);
@@ -27,6 +29,7 @@ Vue.component('x-col', Col);
 Vue.component('x-icon', Icon);
 Vue.component('x-button', Button);
 Vue.component('x-input', Input);
+Vue.component('x-group', Group);
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);

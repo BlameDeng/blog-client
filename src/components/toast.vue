@@ -165,6 +165,7 @@
             }
         }
         >.toast {
+            font-family:$font;
             font-size: $font-size;
             min-height: $toast-min-height;
             line-height: 1.8;

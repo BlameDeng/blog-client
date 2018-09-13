@@ -5,14 +5,15 @@ export default {
     data() {
         return {
             msg: '用户名不能为空',
-            ToastConstructor: Vue.extend(Toast)
+            ToastConstructor: Vue.extend(Toast),
+            currentForm:true
         }
     },
     methods: {
         onClick() {
             let toast = new this.ToastConstructor({
                 propsData: {
-                    autoClose: 43,
+                    autoClose: 3,
                     closeButton:false,
                     type:'error',
                     info:'必须输入汉字'

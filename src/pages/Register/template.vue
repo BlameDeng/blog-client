@@ -13,7 +13,7 @@
                         <x-input class="x-input" v-model="password"></x-input>
                     </div>
                     <div class="form-row">
-                        <x-button @click="onClick">立即注册</x-button>
+                        <x-button @click="onRegister">立即注册</x-button>
                     </div>
                     <p>已有账号?<span @click="onPushToLogin">立即登录</span></p>
                 </div>

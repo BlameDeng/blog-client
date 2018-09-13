@@ -6,10 +6,8 @@
                     <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                         <div class="header-inner">
                             <div class="logo">LET'S SHARE</div>
-                            <p>分享才是网络精神</p>
-                            <div class="btn">
-                                <x-button class="x-button">登 录</x-button>
-                                <x-button class="x-button active">注 册</x-button>
+                            <div class="register-title">
+                                注册 LET'S SHARE 账号
                             </div>
                         </div>
                     </x-col>
@@ -19,19 +17,17 @@
                 <x-row>
                     <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                         <div class="content-inner">
-                            <form class="x-form">
-                                <div class="form-row">
-                                    <p>用户名</p>
-                                    <x-input class="x-input" v-model="username"></x-input>
-                                </div>
-                                <div class="form-row">
-                                    <p>密码</p>
-                                    <x-input class="x-input" v-model="password"></x-input>
-                                </div>
-                                <div class="form-row">
-                                    <x-button @click="onClick">立即注册</x-button>
-                                </div>
-                            </form>
+                            <div class="form-row">
+                                <p>用户名</p>
+                                <x-input class="x-input" v-model="username"></x-input>
+                            </div>
+                            <div class="form-row">
+                                <p>密码</p>
+                                <x-input class="x-input" v-model="password"></x-input>
+                            </div>
+                            <div class="form-row">
+                                <x-button @click="onClick">立即注册</x-button>
+                            </div>
                             <p>已有账号?<span>立即登录</span></p>
                         </div>
                     </x-col>

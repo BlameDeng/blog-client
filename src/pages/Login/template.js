@@ -1,28 +1,43 @@
 import Toast from '../../components/toast';
-import Vue from "vue";
+import Vue from 'vue';
 export default {
-    name: 'HelloWorld',
     data() {
         return {
-            msg: '用户名不能为空',
+            msg: 'Welcome to Your Vue.js App',
             ToastConstructor: Vue.extend(Toast),
-            currentForm:true
+            username: '',
+            password: ''
         }
     },
     methods: {
         onClick() {
-            let toast = new this.ToastConstructor({
-                propsData: {
-                    autoClose: 3,
-                    closeButton:false,
-                    type:'error',
-                    info:'必须输入汉字'
-                }
-            });
-            toast.$slots.default = [this.msg];
+            this.formValidator();
+        },
+        formValidator() {
+            let username = this.username;
+            let password = this.password;
+            let regexpUsername = /^[\w\u4e00-\u9fa5]{1,15}$/;
+            let regexpPassword = /^.{6,16}$/;
+            let usernameMsg = '用户名为长度1到15的字符，只能是字母、数字、下划线或汉字';
+            let passwordMsg = '密码为长度6到16的字符';
+            if (!regexpUsername.test(username)) {
+                this.showToast('error', usernameMsg);
+                return
+            } else if (!regexpPassword.test(password)) {
+                this.showToast('error', passwordMsg);
+            }
+        },
+        showToast(type, msg) {
             let div = document.createElement('div');
             document.body.appendChild(div);
-            toast.$mount(div);
+            let toast = new this.ToastConstructor({
+                propsData: {
+                    autoClose: 5,
+                    type: type,
+                    info: msg,
+                    closeButton: false
+                }
+            }).$mount(div);
         }
     }
 }

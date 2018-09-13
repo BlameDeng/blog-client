@@ -1,5 +1,8 @@
 import Toast from '../../components/toast';
 import Vue from 'vue';
+// import Vuex from 'vuex';
+// Vue.use(Vuex);
+import { mapState, mapGetters, mapMutations } from 'vuex';
 export default {
     data() {
         return {
@@ -9,16 +12,41 @@ export default {
             password: ''
         }
     },
+    computed: {
+        local() {},
+        ...mapState({
+            count: (state) => { return state.count },
+            num: 'number',
+            arrary: 'arrary'
+        }),
+        ...mapGetters(['both', 'bothtwo', 'getByIndex'])
+    },
     methods: {
+        ...mapMutations(['increment','unshift','push']),
         onClick() {
-            this.formValidator();
+            // this.formValidator();
+            this.$store.commit('increment', 10);
+            this.$store.commit('unshift', 'aaa');
+            this.$store.commit({type:'push',string:'string'})
+            this.increment(20);
+            this.unshift('bbb');
+            this.push({string:'ccc'});
+            console.log(this.count);
+            console.log(this.num);
+            console.log(this.arrary);
+            console.log(this.$store.getters.both);
+            console.log(this.$store.getters.bothtwo);
+            console.log(this.$store.getters.getByIndex(2));
+            console.log(this.both);
+            console.log(this.bothtwo);
+            console.log(this.getByIndex(2));
         },
         formValidator() {
             let username = this.username;
             let password = this.password;
             let regexpUsername = /^[\w\u4e00-\u9fa5]{1,15}$/;
             let regexpPassword = /^.{6,16}$/;
-            let usernameMsg = '用户名长度1到15个字符，只能是字母数字下划线中文';
+            let usernameMsg = '用户名为长度1到15的字符，只能是字母、数字、下划线或汉字';
             let passwordMsg = '密码为长度6到16的字符';
             if (!regexpUsername.test(username)) {
                 this.showToast('error', usernameMsg);
@@ -32,7 +60,7 @@ export default {
             document.body.appendChild(div);
             let toast = new this.ToastConstructor({
                 propsData: {
-                    autoClose: 3,
+                    autoClose: 5,
                     type: type,
                     info: msg,
                     closeButton: false

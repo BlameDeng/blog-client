@@ -31,6 +31,7 @@
     }
 </script>
 <style lang="scss" scoped>
+    @import '../assets/base.scss';
     $button-height:32px;
     $font-size:14px;
     $button-background:#fff;
@@ -52,19 +53,20 @@
         cursor: pointer;
         font-size: $font-size;
         padding: .5em 1.5em;
-        color: $color;
+        color: $bcolor3;
         border-radius: $border-radius;
         background:$button-background;
-        border: 1px solid $border-color;
+        border: 1px solid $bcolor5;
         display:inline-flex;
         justify-content:center;
         align-items:center;
         vertical-align:top;
         &.active {
-            background: $button-background-active;
+            background: rgba(255, 255, 255, 0.8);
+            color: #2142A6;
         }
         &:hover {
-            border: 1px solid $border-color-hover;
+            border: 1px solid $bcolor3;
         }
         &:focus {
             outline: none;

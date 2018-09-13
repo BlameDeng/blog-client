@@ -5,29 +5,81 @@
     .x-header {
         background: $bcolor3;
         color: #fff;
-        padding: 10px 0;
+        padding: 50px 0 30px 0;
         .header-inner {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
             .logo {
                 font-size: 40px;
                 font-weight: bold;
             }
+            p {
+                margin: 30px 0;
+                font-size: 14px;
+            }
+            .x-button {
+                margin: 0 20px;
+            }
             .user-bar {
-                display: flex;justify-content:center;align-items:center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 img {
                     width: 40px;
                     border-radius: 50%;
                     vertical-align: middle;
                 }
-                .x-icon{width: 20px;height: 20px;margin-right: 10px;}
+                .x-icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .x-content {
+        .content-inner {
+            >.x-form {
+                width: 80%;
+                margin: 30px auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                >.form-row {
+                    margin: 20px auto;
+                    width: 80%;
+                    >p {
+                        margin: 5px 0;
+                        font-weight: bold;
+                    }
+                    >.x-input {
+                        width: 100%;
+                    }
+                }
+            }
+            >p {
+                text-align: center;
+                font-size: 12px;
+                >span {
+                    color: $bcolor5;
+                    cursor: pointer;
+                    &:hover {
+                        color: $bcolor3;
+                    }
+                }
             }
         }
     }
     .x-footer {
         background: $bcolor5;
-        color: $txtcolor2;font-size: 12px;padding: 16px 0;
-        p{text-align: center;}
+        color: $txtcolor2;
+        font-size: 12px;
+        padding: 16px 0;
+        p {
+            text-align: center;
+        }
     }
 }

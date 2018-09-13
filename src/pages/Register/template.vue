@@ -3,35 +3,45 @@
         <x-layout x-height="100vh">
             <x-header class="x-header">
                 <x-row>
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
-                    <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}">
+                    <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                         <div class="header-inner">
                             <div class="logo">LET'S SHARE</div>
-                            <div class="user-bar">
-                                <x-icon name="blog" class="x-icon"></x-icon><img src="../../assets/default.png" alt="">
+                            <p>分享才是网络精神</p>
+                            <div class="btn">
+                                <x-button class="x-button" @click="currentForm=true">登 录</x-button>
+                                <x-button class="x-button active" @click="currentForm=false">注 册</x-button>
                             </div>
                         </div>
                     </x-col>
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
                 </x-row>
             </x-header>
-            <x-content>
-                <x-row x-height="100%">
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
-                    <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}" x-height="100%">
-                        <div class="content-inner" style="border:1px solid red;height:800px;">
+            <x-content class="x-content">
+                <x-row>
+                    <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
+                        <div class="content-inner">
+                            <form class="x-form">
+                                <div class="form-row">
+                                    <p>用户名</p>
+                                    <x-input class="x-input"></x-input>
+                                </div>
+                                <div class="form-row">
+                                    <p>密码</p>
+                                    <x-input class="x-input"></x-input>
+                                </div>
+                                <div class="form-row">
+                                    <x-button @click="onClick">立即注册</x-button>
+                                </div>
+                            </form>
+                            <p>已有账号?<span>立即登录</span></p>
                         </div>
                     </x-col>
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
                 </x-row>
             </x-content>
             <x-footer class="x-footer">
                 <x-row>
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
-                    <x-col span="20" :pc="{span:16,offset:0}" :wpc="{span:12,offset:0}">
+                    <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                         <p>© xiedaimala.com 2018 wechat: xiedaimala01</p>
                     </x-col>
-                    <x-col span="2" :pc="{span:4,offset:0}" :wpc="{span:6,offset:0}"></x-col>
                 </x-row>
             </x-footer>
         </x-layout>

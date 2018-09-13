@@ -30,6 +30,7 @@
     }
 </script>
 <style lang="scss" scoped>
+    @import '../assets/base.scss';
     $height:32px;
     $font-size:14px;
     $background:#fff;
@@ -38,7 +39,7 @@
     $color:#333;
     $border-color-hover:#666;
     $border-color:#999;
-    $box-show-color:rgba(0, 0, 0, 0.5);
+    $box-show-color:rgba(0, 0, 0, 0.2);
     .wrapper {
         display: inline-block;
         font-size: $font-size;
@@ -48,15 +49,17 @@
         }
         >input {
             height: $height;
+            width:100%;
             padding: 0 0.5em;
-            border: 1px solid $border-color;
+            border: 1px solid $bcolor5;
             border-radius: $border-radius;
             background: none;
             &:hover {
-                border-color: $border-color-hover;
+                border-color: $bcolor3;
             }
             &:focus {
                 outline: none;
+                border-color: $bcolor2;
                 box-shadow: inset 0 0 3px $box-show-color;
             }
             &[disabled], &[readonly] {

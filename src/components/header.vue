@@ -65,11 +65,12 @@
             ...mapActions(['logout']),
             onLogout() {
                 this.logout();
+                this.$router.push({ path: '/' });
             }
         },
         mounted() {
             this.$nextTick(() => {
-                
+
             })
 
         },

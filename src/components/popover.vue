@@ -102,6 +102,10 @@
             }
         },
         beforeDestroy() {
+            document.removeEventListener('click', this.onClickDocument);
+            if (this.$refs.contentWrapper) {
+                this.$refs.contentWrapper.remove();
+            }
             if (this.$refs.popover) {
                 if (this.trigger === 'click') {
                     this.$refs.popover.removeEventListener('click', this.onClick);

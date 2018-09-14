@@ -15,7 +15,7 @@
                         <x-popover position="bottom" trigger="click">
                             <template slot="content">
                                 <div ref="popoverItemWrapper">
-                                    <p class="popover-item">我的博客</p>
+                                    <p class="popover-item" @click="onPushToDetail">我的博客</p>
                                     <p class="popover-item" @click="onLogout">注销登录</p>
                                 </div>
                             </template>
@@ -24,6 +24,9 @@
                             </div>
                         </x-popover>
                     </div>
+                </div>
+                <div class="top-left" v-if="!isLogin">
+                    <span @click="onPushToLogin">登录</span><span @click="onPushToRegister">注册</span>
                 </div>
             </x-col>
         </x-row>
@@ -66,7 +69,16 @@
             onLogout() {
                 this.logout();
                 this.$router.push({ path: '/' });
-            }
+            },
+            onPushToDetail() {
+                this.$router.push({ path: '/detail' });
+            },
+            onPushToLogin() {
+                this.$router.push({ path: '/login' });
+            },
+            onPushToRegister() {
+                this.$router.push({ path: '/register' });
+            },
         },
         mounted() {
             this.$nextTick(() => {
@@ -149,6 +161,25 @@
                         font-size: 18px;
                         align-self: flex-end;
                     }
+                }
+            }
+        }
+        .top-left {
+            color: #fff;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px 16px 0 0;
+            >span {
+                padding: 4px 16px;
+                border: 1px solid #fff;
+                margin-right: 8px;
+                border-radius: 4px;
+                cursor: pointer;
+                &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+                    color: #ddd;
+                    border-color: #ddd;
                 }
             }
         }

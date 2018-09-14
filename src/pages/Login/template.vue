@@ -6,13 +6,13 @@
                 <div class="content-inner">
                     <div class="form-row">
                         <p>用户名</p>
-                        <x-input class="x-input" v-model="username"></x-input>
+                        <x-input class="x-input" v-model="username" :auto-focus="true"></x-input>
                     </div>
                     <div class="form-row">
                         <p>密码</p>
                         <x-input class="x-input" v-model="password" @keyup.enter.native="onLogin"></x-input>
                     </div>
-                    <div class="form-row" >
+                    <div class="form-row">
                         <x-button @click="onLogin">立即登录</x-button>
                     </div>
                     <p>没有账号?<span @click="onPushToRegister">立即注册</span></p>

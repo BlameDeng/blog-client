@@ -1,8 +1,6 @@
 <template>
     <div class="wrapper" :class="{error:error}">
-        <input :value="value" :disabled="disabled" :readOnly="readOnly" 
-        @change="$emit('change',$event)" @input="$emit('input',$event.target.value)"
-        @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :placeholder="placeholder">
+        <input :value="value" :disabled="disabled" :readOnly="readOnly" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :placeholder="placeholder" ref="myXInput">
         <template v-if="error">
             <x-icon name="error"></x-icon><span>{{error}}</span>
         </template>
@@ -16,10 +14,14 @@
             value: { type: String },
             disabled: { type: Boolean, default: false },
             readOnly: { type: Boolean, default: false },
+            autoFocus: { type: Boolean, default: false },
             error: { type: String },
-            placeholder:{type:String}
+            placeholder: { type: String }
         },
-        components: { 'x-icon': Icon }
+        components: { 'x-icon': Icon },
+        mounted() {
+            if (this.autoFocus) { this.$refs.myXInput.focus(); }
+        },
     }
 </script>
 <style lang="scss" scoped>

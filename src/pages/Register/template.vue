@@ -6,7 +6,7 @@
                 <div class="content-inner">
                     <div class="form-row">
                         <p>新用户名</p>
-                        <x-input class="x-input" v-model="username" placeholder="1到15个字符，可以是字母、数字、下划线或汉字"></x-input>
+                        <x-input class="x-input" v-model="username" placeholder="1到15个字符，可以是字母、数字、下划线或汉字" :auto-focus="true"></x-input>
                     </div>
                     <div class="form-row">
                         <p>登录密码</p>

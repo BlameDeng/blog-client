@@ -11,8 +11,18 @@
                         </template>
                     </div>
                     <div class="user-bar" v-if="isLogin">
-                        <x-icon name="blog" class="x-icon"></x-icon><img :src="this.user.avatar" alt="">
-                        <x-icon name="down" class="x-icon"></x-icon>
+                        <x-icon name="blog" class="x-icon"></x-icon>
+                        <x-popover position="bottom" trigger="click">
+                            <template slot="content">
+                                <div ref="popoverItemWrapper">
+                                    <p class="popover-item">我的博客</p>
+                                    <p class="popover-item" @click="onLogout">注销登录</p>
+                                </div>
+                            </template>
+                            <div class="user-info-wrapper"> <img :src="this.user.avatar" alt="">
+                                <x-icon name="down" class="x-icon"></x-icon>
+                            </div>
+                        </x-popover>
                     </div>
                 </div>
             </x-col>
@@ -23,10 +33,12 @@
     import Icon from './icon';
     import Col from './col';
     import Row from './row';
-    import { mapState } from 'vuex';
+    import Popover from './popover';
+    // import Vue from 'vue';
+    import { mapState, mapActions } from 'vuex';
     export default {
         name: 'xHeader',
-        components: { 'x-icon': Icon, 'x-col': Col, 'x-row': Row },
+        components: { 'x-icon': Icon, 'x-col': Col, 'x-row': Row, 'x-popover': Popover },
         props: {
             xHeight: { type: String, default: '' },
             xWidth: { type: String, default: '' },
@@ -45,11 +57,22 @@
             txt() {
                 if (this.tipsTxt === 'login') {
                     return `登录 LET'S SHARE`;
-                } else if (this.tipsTxt === 'register') { return `注册 LET'S SHARE`; }
-                else if(this.tipsTxt==='index'){return `加入 LET'S SHARE 分享前端咨询`}
+                } else if (this.tipsTxt === 'register') { return `注册 LET'S SHARE`; } else if (this.tipsTxt === 'index') { return `加入 LET'S SHARE 分享前端咨询` }
             }
         },
         created() {},
+        methods: {
+            ...mapActions(['logout']),
+            onLogout() {
+                this.logout();
+            }
+        },
+        mounted() {
+            this.$nextTick(() => {
+                
+            })
+
+        },
     }
 </script>
 <style lang="scss" scoped>
@@ -79,10 +102,15 @@
                     border-left: 2px solid #ddd;
                 }
             }
-            >.user-bar {
+            .user-bar {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                .user-info-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
                 img {
                     width: 40px;
                     border-radius: 50%;
@@ -95,6 +123,7 @@
                     cursor: pointer;
                     margin-right: 20px;
                 }
+
             }
         }
         &.login-register {
@@ -110,7 +139,7 @@
                         font-size: 50px;
                         align-self: flex-start;
                     }
-                    >.logotitle{
+                    >.logotitle {
                         font-size: 25px;
                         align-self: center;
                         margin: 20px auto;
@@ -121,6 +150,12 @@
                     }
                 }
             }
+        }
+    }
+    .popover-item {
+        cursor: pointer;
+        &:hover {
+            color: $bcolor3;
         }
     }
 </style>

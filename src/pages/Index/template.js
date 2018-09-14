@@ -10,10 +10,14 @@ export default {
         })
     },
     created() {
-        console.log(this.user);
-        console.log(this.isLogin);
     },
     methods: {
+        onPushToLogin() {
+            this.$router.push({ path: '/login' });
+        },
+        onPushToRegister() {
+            this.$router.push({ path: '/register' });
+        },
         onClick() {
             // request('/auth/login', 'POST', { username: 'hunger1', password: '1234567' })
 

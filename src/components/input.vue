@@ -1,6 +1,8 @@
 <template>
     <div class="wrapper" :class="{error:error}">
-        <input :value="value" :disabled="disabled" :readOnly="readOnly" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)">
+        <input :value="value" :disabled="disabled" :readOnly="readOnly" 
+        @change="$emit('change',$event)" @input="$emit('input',$event.target.value)"
+        @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :placeholder="placeholder">
         <template v-if="error">
             <x-icon name="error"></x-icon><span>{{error}}</span>
         </template>
@@ -11,20 +13,11 @@
     export default {
         name: 'xInput',
         props: {
-            value: {
-                type: String
-            },
-            disabled: {
-                type: Boolean,
-                default: false
-            },
-            readOnly: {
-                type: Boolean,
-                default: false
-            },
-            error: {
-                type: String
-            }
+            value: { type: String },
+            disabled: { type: Boolean, default: false },
+            readOnly: { type: Boolean, default: false },
+            error: { type: String },
+            placeholder:{type:String}
         },
         components: { 'x-icon': Icon }
     }
@@ -49,7 +42,7 @@
         }
         >input {
             height: $height;
-            width:100%;
+            width: 100%;
             padding: 0 0.5em;
             border: 1px solid $bcolor5;
             border-radius: $border-radius;

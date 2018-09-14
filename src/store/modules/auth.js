@@ -5,9 +5,7 @@ const state = {
     isLogin: false
 }
 
-
 const getters = {}
-
 
 const mutations = {
     setUser(state, playload) {
@@ -18,7 +16,6 @@ const mutations = {
         state.isLogin = playload.isLogin;
     }
 }
-
 
 const actions = {
     login({ commit }, { username, password }) {
@@ -55,25 +52,6 @@ const actions = {
         return true;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default {
     state,

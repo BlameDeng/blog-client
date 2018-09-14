@@ -1,11 +1,11 @@
 <template>
     <div id="index">
         <x-layout x-height="100vh">
-            <x-header></x-header>
+            <x-header tips-txt="index"></x-header>
             <x-content>
                 <div class="content-inner">
-                    <div class="mask" v-if="!isLogin">
-                        跳转注册登录
+                    <div class="login-register" v-if="!isLogin">
+                        <span @click="onPushToLogin">登录</span><span @click="onPushToRegister">注册</span>
                     </div>
                 </div>
             </x-content>

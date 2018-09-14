@@ -7,7 +7,7 @@
                         <div class="logo">LET'S SHARE</div>
                         <template v-if="!isLogin">
                             <div class="logotitle">汇聚精品博客</div>
-                            <div class="logoinfo"><span>{{txt}}</span> LET'S SHARE</div>
+                            <div class="logoinfo">{{txt}}</div>
                         </template>
                     </div>
                     <div class="user-bar" v-if="isLogin">
@@ -44,8 +44,9 @@
             },
             txt() {
                 if (this.tipsTxt === 'login') {
-                    return `登录`;
-                } else if (this.tipsTxt === 'register') { return `注册`; }
+                    return `登录 LET'S SHARE`;
+                } else if (this.tipsTxt === 'register') { return `注册 LET'S SHARE`; }
+                else if(this.tipsTxt==='index'){return `加入 LET'S SHARE 分享前端咨询`}
             }
         },
         created() {},

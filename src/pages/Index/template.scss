@@ -6,9 +6,14 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        .mask {
-            height: 100%;
-            flex-grow: 1;
+        >.login-register {
+            color: #fff;
+            position:fixed;
+            top:0;right: 0;
+            padding: 10px 16px 0 0;
+            >span{padding: 4px 16px;border: 1px solid #fff;margin-right: 8px;border-radius: 4px;
+            cursor: pointer;
+        &:hover{background: rgba(0,0,0,0.05);color: #ddd;border-color: #ddd;}}
         }
     }
 }

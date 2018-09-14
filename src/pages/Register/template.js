@@ -27,9 +27,8 @@ export default {
         onRegister() {
             this.formValidator().then(() => {
                 this.register({ username: this.username, password: this.password }).then(res => {
-                    if (res.status === 'ok') {
-                        this.showToast('success', res.msg);
-                    }
+                    this.showToast('success', '注册成功');
+                    this.onPushToIndex();
                 }, res => {
                     if (res.status === 'fail') {
                         this.showToast('error', res.msg);
@@ -45,6 +44,9 @@ export default {
         },
         onPushToLogin() {
             this.$router.push({ path: '/login' });
+        },
+        onPushToIndex() {
+            this.$router.push({ path: '/' })
         },
         formValidator() {
             return new Promise((resolve, reject) => {

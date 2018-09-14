@@ -5,12 +5,12 @@
             <x-content class="x-content">
                 <div class="content-inner">
                     <div class="form-row">
-                        <p>用户名</p>
-                        <x-input class="x-input" v-model="username"></x-input>
+                        <p>新用户名</p>
+                        <x-input class="x-input" v-model="username" placeholder="1到15个字符，可以是字母、数字、下划线或汉字"></x-input>
                     </div>
                     <div class="form-row">
-                        <p>密码</p>
-                        <x-input class="x-input" v-model="password"></x-input>
+                        <p>登录密码</p>
+                        <x-input class="x-input" v-model="password" placeholder="6到16个字符"></x-input>
                     </div>
                     <div class="form-row">
                         <x-button @click="onRegister">立即注册</x-button>

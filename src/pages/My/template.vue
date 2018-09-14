@@ -3,7 +3,7 @@
         <x-layout x-height="100vh">
             <x-header></x-header>
             <x-content>
-                <div class="content-inner" style="border:1px solid red;height:800px;">
+                <div class="content-inner" style="border:1px solid red;height:400px;">
                 </div>
             </x-content>
             <x-footer></x-footer>

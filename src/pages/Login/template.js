@@ -15,7 +15,9 @@ export default {
             isLogin: state => state.auth.isLogin
         })
     },
-    created() {},
+    created() {
+        console.log(this.$route.query);
+    },
     methods: {
         ...mapActions(['login']),
         onLogin() {
@@ -23,7 +25,10 @@ export default {
                 // this.$store.commit({ type: 'setUser', user: this.username });
                 this.login({ username: this.username, password: this.password }).then(res => {
                     this.showToast('success', res.msg);
-                    this.$router.push({ path: '/' });
+                    console.log(this.user);
+                    this.$router.push({ path: this.$route.query.redirect || '/' });
+                    // console.log(this.$router.query);
+                    // this.$route.push({ path: '/' });
                 }).catch(res => {
                     if (res.status === 'fail') {
                         this.showToast('error', res.msg);
@@ -57,5 +62,8 @@ export default {
                 propsData: { autoClose: 5, type: type, info: msg, closeButton: false }
             }).$mount(div);
         }
+    },
+    mounted() {
+
     },
 }

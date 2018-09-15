@@ -2,4 +2,32 @@
 #detail {
     font-family: $font;
     min-width: 250px;
+    .content-inner {
+        >.title-info {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            >img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            >.blog-title {
+                >.username {
+                    color: $bcolor3;
+                    font-size: 14px;
+                }
+                >.created-at {
+                    color: #bbb;
+                    font-size: 14px;
+                }
+            }
+        }
+        >.blog-content {
+            padding-top: 20px;
+        }
+    }
 }

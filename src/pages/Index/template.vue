@@ -10,9 +10,13 @@
                             <p>{{blog.user.username}}</p>
                         </div>
                         <div class="blog-content">
-                            <h3>{{blog.title}}</h3>
+                            <h3>
+                                <router-link :to="`/detail/${blog.id}`">{{blog.title}}</router-link>
+                            </h3>
                             <span>{{blog.createdAt}}</span>
-                            <p>{{blog.description}}</p>
+                            <p>
+                                <router-link :to="`/detail/${blog.id}`">{{blog.description}}</router-link>
+                            </p>
                         </div>
                     </div>
                     <ul class="page-index-bar">
@@ -21,7 +25,7 @@
                         <li v-for="(n,index) in totalPage" :data-index="index" @click="onClickIndex(index)" v-if="index>=start&&index<=end" :class="{active:currentIndex===index}">{{n}}</li>
                         <li @click="next">下一页</li>
                         <li @click="goPageIndex(1)">尾页</li>
-                        <span>第{{currentIndex+1}} / {{totalPage}}页</span>
+                        <span>第 {{currentIndex+1}} / {{totalPage}} 页</span>
                     </ul>
                 </div>
             </x-content>

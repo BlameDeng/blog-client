@@ -3,9 +3,6 @@
     font-family: $font;
     min-width: 250px;
     .content-inner {
-
-
-
         >.blog-info {
             height: 100%;
             display: flex;
@@ -50,7 +47,6 @@
                     color: #ccc;
                     font-size: 12px;
                 }
-
                 p {
                     margin-left: 20px;
                     white-space: nowrap;
@@ -60,16 +56,6 @@
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
         .page-index-bar {
             display: flex;
             justify-content: center;

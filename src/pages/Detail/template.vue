@@ -1,9 +1,20 @@
 <template>
     <div id="detail">
-        <x-layout x-height="100vh">
+        <x-layout x-min-height="100vh">
             <x-header></x-header>
             <x-content>
-                <div class="content-inner" style="border:1px solid red;height:800px;">
+                <div class="content-inner">
+                    <div class="title-info">
+                        <img :src="user.avatar">
+                        <div class="blog-title">
+                            <h3>{{blog.title}}</h3>
+                            <span class="username">
+                                <router-link to="/">{{user.username}}</router-link>
+                            </span>
+                            <span class="created-at">{{blog.createdAt}}</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" v-html="markedContent"></div>
                 </div>
             </x-content>
             <x-footer class="x-footer"></x-footer>

@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { mapState, mapActions } from 'vuex';
 export default {
     name: 'Index',
@@ -37,7 +36,6 @@ export default {
             this.getIndexBlogs(index + 1).then(res => {
                 this.indexBlogs = res.data;
                 this.totalPage = +res.totalPage;
-                console.log(this.indexBlogs);
                 this.watchCurrentIndex();
             })
         },

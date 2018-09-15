@@ -6,7 +6,7 @@
                     <div class="logo-wrapper">
                         <div class="logo" @click="onPushToIndex">LET'S SHARE</div>
                         <template v-if="!isLogin">
-                            <div class="logotitle">汇聚精品博客</div>
+                            <div class="logotitle">汇聚精品 WEB 博客</div>
                             <div class="logoinfo">{{txt}}</div>
                         </template>
                     </div>
@@ -95,6 +95,7 @@
         background: $bcolor3;
         color: #fff;
         padding: 30px 0 10px 0;
+        position:relative;
         .header-inner {
             display: flex;
             justify-content: space-between;
@@ -167,7 +168,7 @@
         }
         .top-left {
             color: #fff;
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             padding: 10px 16px 0 0;

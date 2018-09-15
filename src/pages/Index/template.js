@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import { mapState, mapActions } from 'vuex';
-import Pagination from '../../components/pagination';
 export default {
     name: 'Index',
-    components: { 'x-pagination': Pagination },
     data() {
         return {
             indexBlogs: [],
@@ -39,30 +37,32 @@ export default {
             this.getIndexBlogs(index + 1).then(res => {
                 this.indexBlogs = res.data;
                 this.totalPage = +res.totalPage;
+                console.log(this.indexBlogs);
                 this.watchCurrentIndex();
             })
         },
         goPageIndex(n) {
             if (n === 0) {
                 this.currentIndex = 0;
-                this.updateIndexBlogs(this.currentIndex);
             } else if (n === 1) {
                 this.currentIndex = this.totalPage - 1;
                 this.start = this.currentIndex - this.pageSize + 1;
-                this.updateIndexBlogs(this.currentIndex);
             }
+            this.updateIndexBlogs(this.currentIndex);
         },
         pre() {
-            if (this.currentIndex > 0) {
-                this.currentIndex -= 1;
-                this.updateIndexBlogs(this.currentIndex);
+            if (this.currentIndex === 0) {
+                return
             }
+            this.currentIndex -= 1;
+            this.updateIndexBlogs(this.currentIndex);
         },
         next() {
-            if (this.currentIndex < this.totalPage - 1) {
-                this.currentIndex += 1;
-                this.updateIndexBlogs(this.currentIndex);
+            if (this.currentIndex === this.totalPage - 1) {
+                return
             }
+            this.currentIndex += 1;
+            this.updateIndexBlogs(this.currentIndex);
         },
         watchCurrentIndex() {
             let middle = this.start + Math.floor((this.pageSize - 1) / 2);

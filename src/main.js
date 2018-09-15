@@ -9,6 +9,9 @@ import App from './App';
 import router from './router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import friendlyDate from './helpers/friendlyDate';
+
+Vue.use(friendlyDate);
 
 import Layout from './components/layout';
 import Header from './components/header';

@@ -11,7 +11,7 @@
                             <span class="username">
                                 <router-link to="/">{{user.username}}</router-link>
                             </span>
-                            <span class="created-at">{{blog.createdAt}}</span>
+                            <span class="created-at">发布于 {{friendlyDate(blog.createdAt)}}</span>
                         </div>
                     </div>
                     <div class="blog-content" v-html="markedContent"></div>

@@ -6,8 +6,10 @@
                 <div class="content-inner">
                     <div v-for="(blog,index) in indexBlogs" class="blog-info">
                         <div class="user">
-                            <img :src="blog.user.avatar">
-                            <p>{{blog.user.username}}</p>
+                            <router-link :to="`/user/${blog.user.id}`"><img :src="blog.user.avatar"></router-link>
+                            <p>
+                                <router-link :to="`/user/${blog.user.id}`">{{blog.user.username}}</router-link>
+                            </p>
                         </div>
                         <div class="blog-content">
                             <h3>

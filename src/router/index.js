@@ -10,7 +10,6 @@ import Register from "@/pages/Register/template.vue";
 import User from "@/pages/User/template.vue";
 
 import store from '../store';
-// window.store = store;
 
 Vue.use(Router);
 
@@ -38,19 +37,6 @@ const router = new Router({
 // from: Route: 当前导航正要离开的路由
 // next: Function: 一定要调用该方法来 resolve 这个钩子
 
-// router.beforeEach((to, from, next) => {
-//     console.log(store.dispatch('checkLogin'))
-//     if (
-//         to.matched.some(record => {
-//             return record.meta.requiresAuth; //true or undefined
-//         })
-//     ) {
-//         if (!store.dispatch('checkLogin')) {
-//             next({ path: '/login', query: { redirect: 123 } });
-//         } else { next(); }
-//     } else { next(); }
-// });
-
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         store.dispatch('checkLogin').then(isLogin => {
@@ -60,15 +46,9 @@ router.beforeEach((to, from, next) => {
                 next();
             }
         })
-
     } else {
         next();
     }
 })
-
-
-
-
-
 
 export default router;

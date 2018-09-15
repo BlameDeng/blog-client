@@ -8,7 +8,10 @@ export default {
             msg: 'Welcome to Your Vue.js App'
         }
     },
-    mounted() {
-        console.log(this.$router)
+    created() {
+        console.log(this.$route.query)
     },
+    mounted() {
+        
+    }
 }

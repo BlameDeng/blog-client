@@ -18,4 +18,3 @@
         -moz-osx-font-smoothing: grayscale;
     }
 </style>
-<!-- <img src="./assets/logo.png">color: #2c3e50; -->

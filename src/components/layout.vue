@@ -9,7 +9,8 @@
         props: {
             xHeight: { type: String, default: '' },
             xWidth: { type: String, default: '' },
-            xBg: { type: String, default: '' }
+            xBg: { type: String, default: '' },
+            xMinHeight: { type: String, default: '' }
         },
         data() {
             return {
@@ -18,12 +19,13 @@
         },
         computed: {
             xStyle() {
-                let { xHeight, xWidth, xBg } = this;
-                return { width: xWidth, height: xHeight, backgroundColor: xBg }
+                let { xHeight, xWidth, xBg, xMinHeight } = this;
+                return { width: xWidth, height: xHeight, backgroundColor: xBg, ['min-height']: xMinHeight };
             },
             xClass() {
                 return {
-                    ['has-sider']: this.hasSider }
+                    ['has-sider']: this.hasSider
+                }
             }
         },
         mounted() {

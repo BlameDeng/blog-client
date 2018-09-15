@@ -16,19 +16,14 @@ export default {
         })
     },
     created() {
-        console.log(this.$route.query);
     },
     methods: {
         ...mapActions(['login']),
         onLogin() {
             this.formValidator().then(() => {
-                // this.$store.commit({ type: 'setUser', user: this.username });
                 this.login({ username: this.username, password: this.password }).then(res => {
                     this.showToast('success', res.msg);
-                    console.log(this.user);
                     this.$router.push({ path: this.$route.query.redirect || '/' });
-                    // console.log(this.$router.query);
-                    // this.$route.push({ path: '/' });
                 }).catch(res => {
                     if (res.status === 'fail') {
                         this.showToast('error', res.msg);

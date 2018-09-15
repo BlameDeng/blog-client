@@ -4,7 +4,7 @@
             <x-col span="20" offset="2" :pc="{span:16,offset:4}" :wpc="{span:12,offset:6}">
                 <div class="header-inner">
                     <div class="logo-wrapper">
-                        <div class="logo">LET'S SHARE</div>
+                        <div class="logo" @click="onPushToIndex">LET'S SHARE</div>
                         <template v-if="!isLogin">
                             <div class="logotitle">汇聚精品博客</div>
                             <div class="logoinfo">{{txt}}</div>
@@ -15,7 +15,7 @@
                         <x-popover position="bottom" trigger="click">
                             <template slot="content">
                                 <div ref="popoverItemWrapper">
-                                    <p class="popover-item" @click="onPushToDetail">我的博客</p>
+                                    <p class="popover-item" @click="onPushToMy">我的博客</p>
                                     <p class="popover-item" @click="onLogout">注销登录</p>
                                 </div>
                             </template>
@@ -37,7 +37,6 @@
     import Col from './col';
     import Row from './row';
     import Popover from './popover';
-    // import Vue from 'vue';
     import { mapState, mapActions } from 'vuex';
     export default {
         name: 'xHeader',
@@ -66,12 +65,13 @@
         created() {},
         methods: {
             ...mapActions(['logout']),
+            onPushToIndex() { this.$router.push({ path: '/' }) },
             onLogout() {
                 this.logout();
-                this.$router.push({ path: '/' });
+                this.onPushToIndex();
             },
-            onPushToDetail() {
-                this.$router.push({ path: '/detail' });
+            onPushToMy() {
+                this.$router.push({ path: `/my/${this.user.id}`, query: { redirect: this.user.id } });
             },
             onPushToLogin() {
                 this.$router.push({ path: '/login' });
@@ -107,6 +107,7 @@
                 >.logo {
                     font-size: 40px;
                     font-weight: bold;
+                    cursor:pointer;
                 }
                 >.logoinfo {
                     font-size: 16px;

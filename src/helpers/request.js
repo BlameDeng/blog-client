@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Message } from 'element-ui';
 
 axios.defaults.baseURL = 'http://blog-server.hunger-valley.com';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

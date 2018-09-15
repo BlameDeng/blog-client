@@ -11,7 +11,7 @@
                         </template>
                     </div>
                     <div class="user-bar" v-if="isLogin">
-                        <router-link to="./create">
+                        <router-link to="/create">
                             <x-icon name="blog" class="x-icon"></x-icon>
                         </router-link>
                         <x-popover position="bottom" trigger="click">

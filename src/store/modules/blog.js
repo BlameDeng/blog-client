@@ -15,16 +15,18 @@ const actions = {
     async getDetail({ commit }, blogId) {
         let res = await blog.getDetail({ blogId });
         return res;
+    },
+    async createBlog({ commit }, {title, description, content, atIndex = false}) {
+        let res = await blog.createBlog({ title, description, content, atIndex });
+        return res;
     }
 }
 
-// getIndexBlogs({ page = 1 } = { page: 1 }) {
-//     return this.getBlogs({ page, atIndex: true });
-// },
 
-// getDetail({ blogId }) {
-//     return request(URL.GET_DETAIL.replace(':blogId', blogId));
-// },
+
+// createBlog({ title = '', description = '', content = '', atIndex = false } = { title: '', description: '', content: '', atIndex: false }) {
+//     return request(URL.CREATE, 'POST', { title, description, content, atIndex });
+// }
 
 
 export default {

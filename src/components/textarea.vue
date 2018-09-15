@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper" :style="xStyle">
-        <textarea :value="value" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :style="xStyle">
+        <textarea :style="xStyle" :value="value" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)">
         </textarea>
     </div>
 </template>
@@ -28,9 +28,9 @@
 <style lang="scss" scoped>
     @import '../assets/base.scss';
     .wrapper {
-        font-family: $font;
-        display: inline-block;
-        >textarea {
+        textarea {
+            font-family: $font;
+            display: inline-block;
             font-family: $font;
             resize: none;
             padding: 1em 0.5em;

@@ -11,7 +11,9 @@
                         </template>
                     </div>
                     <div class="user-bar" v-if="isLogin">
-                        <x-icon name="blog" class="x-icon"></x-icon>
+                        <router-link to="./create">
+                            <x-icon name="blog" class="x-icon"></x-icon>
+                        </router-link>
                         <x-popover position="bottom" trigger="click">
                             <template slot="content">
                                 <div ref="popoverItemWrapper">
@@ -95,7 +97,7 @@
         background: $bcolor3;
         color: #fff;
         padding: 30px 0 10px 0;
-        position:relative;
+        position: relative;
         .header-inner {
             display: flex;
             justify-content: space-between;
@@ -108,7 +110,7 @@
                 >.logo {
                     font-size: 40px;
                     font-weight: bold;
-                    cursor:pointer;
+                    cursor: pointer;
                 }
                 >.logoinfo {
                     font-size: 16px;

@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper" :class="{error:error}">
-        <input :value="value" :disabled="disabled" :readOnly="readOnly" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :placeholder="placeholder" ref="myXInput">
+    <div class="wrapper" :style="xStyle" :class="{error:error}">
+        <input :style="xStyle" :value="value" :disabled="disabled" :readOnly="readOnly" @change="$emit('change',$event)" @input="$emit('input',$event.target.value)" @focus="$emit('focus',$event)" @blur="$emit('blur',$event)" :placeholder="placeholder" ref="myXInput">
         <template v-if="error">
             <x-icon name="error"></x-icon><span>{{error}}</span>
         </template>
@@ -15,13 +15,21 @@
             disabled: { type: Boolean, default: false },
             readOnly: { type: Boolean, default: false },
             autoFocus: { type: Boolean, default: false },
+            xWidth: { type: String },
+            xHeight: { type: String },
             error: { type: String },
             placeholder: { type: String }
         },
         components: { 'x-icon': Icon },
+        computed: {
+            xStyle() {
+                let { xWidth, xHeight, xResize } = this;
+                return { width: xWidth, height: xHeight };
+            }
+        },
         mounted() {
             if (this.autoFocus) { this.$refs.myXInput.focus(); }
-        },
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -37,10 +45,11 @@
     $box-show-color:rgba(0, 0, 0, 0.2);
     .wrapper {
         display: inline-block;
+        font-family:$font;
         font-size: $font-size;
         color: $color;
         >:not(:last-child) {
-            margin-right: 0.5em;
+            // margin-right: 0.5em;
         }
         >input {
             height: $height;

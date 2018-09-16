@@ -1,14 +1,11 @@
 import { mapActions } from "vuex";
-import Vue from 'vue';
 import Button from '../../components/button';
 import Icon from '../../components/icon';
-import Toast from '../../components/toast';
 export default {
     name: "MyPage",
     components: { 'x-button': Button, 'x-icon': Icon },
     data() {
         return {
-            ToastConstructor: Vue.extend(Toast),
             userId: "",
             indexBlogs: [],
             user: {},
@@ -71,7 +68,7 @@ export default {
         deleteConfirm() {
             this.isMask = false;
             this.deleteBlog({ blogId: this.deleteBlogId }).then(res => {
-                this.showToast('success', res.msg);
+                this.$showToast('success', res.msg);
                 this.indexBlogs = this.indexBlogs.filter(blog => blog.id !== this.deleteBlogId);
             }).catch(() => {});
         },
@@ -105,13 +102,6 @@ export default {
             } else {
                 this.start = this.start + this.currentIndex - middle;
             }
-        },
-        showToast(type, msg) {
-            let div = document.createElement('div');
-            document.body.appendChild(div);
-            let toast = new this.ToastConstructor({
-                propsData: { autoClose: 3, type: type, info: msg, closeButton: false }
-            }).$mount(div);
         }
     }
 };

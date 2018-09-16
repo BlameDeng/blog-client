@@ -17,7 +17,7 @@
             autoClose: { type: [Boolean, Number], default: 3 },
             closeButton: {
                 type: [Object, Boolean],
-                default: () => { return { text: '关闭', callback: undefined } }
+                default: () => { return { text: '关闭', callback: () => {} } }
             },
             position: {
                 type: String,
@@ -33,9 +33,7 @@
                     return ['tips', 'success', 'warning', 'error'].indexOf(value) >= 0;
                 }
             },
-            info: {
-                type: String
-            }
+            info: { type: String }
         },
         computed: {
             toastClasses() {
@@ -163,7 +161,7 @@
             }
         }
         >.toast {
-            font-family:$font;
+            font-family: $font;
             font-size: $font-size;
             min-height: $toast-min-height;
             line-height: 1.8;

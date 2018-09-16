@@ -6,8 +6,10 @@ Vue.use(Vuex);
 import App from './App';
 import router from './router';
 import friendlyDate from './helpers/friendlyDate';
+import toast from './helpers/toast';
 
 Vue.use(friendlyDate);
+Vue.use(toast);
 
 import Layout from './components/layout';
 import Header from './components/header';

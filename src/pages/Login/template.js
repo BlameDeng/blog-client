@@ -1,14 +1,11 @@
-import Toast from '../../components/toast';
 import Input from '../../components/input';
 import Button from '../../components/button';
-import Vue from 'vue';
 import { mapActions, mapState } from 'vuex';
 export default {
     name: 'LoginPage',
     components: { 'x-input': Input, 'x-button': Button },
     data() {
         return {
-            ToastConstructor: Vue.extend(Toast),
             username: '',
             password: ''
         }
@@ -24,11 +21,11 @@ export default {
         onLogin() {
             this.formValidator().then(() => {
                 this.login({ username: this.username, password: this.password }).then(res => {
-                    this.showToast('success', res.msg);
+                    this.$showToast('success', res.msg);
                     this.$router.push({ path: this.$route.query.redirect || '/' });
                 }).catch(res => {
                     if (res.status === 'fail') {
-                        this.showToast('error', res.msg);
+                        this.$showToast('error', res.msg);
                     }
                 })
             }, () => {})
@@ -43,21 +40,14 @@ export default {
                 let usernameMsg = '用户名为长度1到15的字符，只能是字母、数字、下划线或汉字';
                 let passwordMsg = '密码为长度6到16的字符';
                 if (!regexpUsername.test(this.username)) {
-                    this.showToast('error', usernameMsg);
+                    this.$showToast('error', usernameMsg);
                     reject();
                 } else if (!regexpPassword.test(this.password)) {
-                    this.showToast('error', passwordMsg);
+                    this.$showToast('error', passwordMsg);
                     reject();
                 };
                 resolve();
             })
-        },
-        showToast(type, msg) {
-            let div = document.createElement('div');
-            document.body.appendChild(div);
-            let toast = new this.ToastConstructor({
-                propsData: { autoClose: 3, type: type, info: msg, closeButton: false }
-            }).$mount(div);
         }
     }
 }

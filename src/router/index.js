@@ -33,10 +33,6 @@ const router = new Router({
     ]
 });
 
-// to: Route: 即将要进入的目标 路由对象
-// from: Route: 当前导航正要离开的路由
-// next: Function: 一定要调用该方法来 resolve 这个钩子
-
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         store.dispatch('checkLogin').then(isLogin => {

@@ -54,7 +54,7 @@ export default {
             let div = document.createElement('div');
             document.body.appendChild(div);
             let toast = new this.ToastConstructor({
-                propsData: { autoClose: 5, type: type, info: msg, closeButton: false }
+                propsData: { autoClose: 3, type: type, info: msg, closeButton: false }
             }).$mount(div);
         }
     },

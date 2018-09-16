@@ -26,10 +26,13 @@
                                 <router-link :to="`/detail/${blog.id}`">{{blog.description}}</router-link>
                             </p>
                             <div class="btns">
+                                <router-link :to="`/detail/${blog.id}`">
+                                    <x-button class="my-btn">查看</x-button>
+                                </router-link>
                                 <router-link :to="`/edit/${blog.id}`">
                                     <x-button class="my-btn">编辑</x-button>
                                 </router-link>
-                                <x-button class="my-btn">删除</x-button>
+                                <x-button class="my-btn" @click="onClickDelte(blog.id)">删除</x-button>
                             </div>
                         </div>
                     </div>
@@ -41,6 +44,19 @@
                         <li @click="goPageIndex(1)">尾页</li>
                         <span>第 {{currentIndex+1}} / {{totalPage}} 页</span>
                     </ul>
+                </div>
+                <div class="mask" v-if="isMask">
+                    <div class="delete-confirm">
+                        <h3>提示</h3>
+                        <p>
+                            <x-icon name="warning"></x-icon>
+                            <span>此操作将永久删除该文章，是否继续？</span>
+                        </p>
+                        <div class="confirm-btns">
+                            <x-button class="confirm-btn" @click="deleteCancle">取消删除</x-button>
+                            <x-button class="confirm-btn" @click="deleteConfirm">确认删除</x-button>
+                        </div>
+                    </div>
                 </div>
             </x-content>
             <x-footer></x-footer>

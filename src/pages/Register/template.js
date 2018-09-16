@@ -1,7 +1,5 @@
 import Toast from '../../components/toast';
 import Vue from 'vue';
-// import Vuex from 'vuex';
-// Vue.use(Vuex);
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 export default {
     data() {
@@ -35,12 +33,6 @@ export default {
                     }
                 });
             }, (error) => {})
-            // this.$store.commit('increment', 10);
-            // this.$store.commit('unshift', 'aaa');
-            // this.$store.commit({type:'push',string:'string'})
-            // this.increment(20);
-            // this.unshift('bbb');
-            // this.push({string:'ccc'});
         },
         onPushToLogin() {
             this.$router.push({ path: '/login' });
@@ -69,7 +61,7 @@ export default {
             document.body.appendChild(div);
             let toast = new this.ToastConstructor({
                 propsData: {
-                    autoClose: 5,
+                    autoClose: 3,
                     type: type,
                     info: msg,
                     closeButton: false

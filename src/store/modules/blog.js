@@ -1,6 +1,5 @@
 import blog from '../../api/blog';
 
-
 const state = {}
 
 const getters = {}
@@ -24,18 +23,15 @@ const actions = {
         let res = await blog.getBlogsByUserId(userId, { page, atIndex });
         return res;
     },
-    async updateBlog({ commit }, { blogId ,title, description, content, atIndex }) {
+    async updateBlog({ commit }, { blogId, title, description, content, atIndex }) {
         let res = await blog.updateBlog({ blogId }, { title, description, content, atIndex });
         return res;
+    },
+    async deleteBlog({ commit }, { blogId }) {
+        let res = await blog.deleteBlog({ blogId });
+        return res
     }
 }
-
-
-// updateBlog({ blogId }, { title, description, content, atIndex }) {
-//     return request(URL.UPDATE.replace(':blogId', blogId), 'PATCH', { title, description, content, atIndex })
-// },
-
-
 
 export default {
     state,

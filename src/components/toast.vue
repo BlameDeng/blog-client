@@ -14,7 +14,7 @@
         name: 'xToast',
         components: { 'x-icon': Icon },
         props: {
-            autoClose: { type: [Boolean, Number], default: 2 },
+            autoClose: { type: [Boolean, Number], default: 3 },
             closeButton: {
                 type: [Object, Boolean],
                 default: () => { return { text: '关闭', callback: undefined } }

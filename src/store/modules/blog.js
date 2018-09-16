@@ -23,8 +23,19 @@ const actions = {
     async getBlogsByUserId({ commit }, { userId, page = 1, atIndex }) {
         let res = await blog.getBlogsByUserId(userId, { page, atIndex });
         return res;
+    },
+    async updateBlog({ commit }, { blogId ,title, description, content, atIndex }) {
+        let res = await blog.updateBlog({ blogId }, { title, description, content, atIndex });
+        return res;
     }
 }
+
+
+// updateBlog({ blogId }, { title, description, content, atIndex }) {
+//     return request(URL.UPDATE.replace(':blogId', blogId), 'PATCH', { title, description, content, atIndex })
+// },
+
+
 
 export default {
     state,

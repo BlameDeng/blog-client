@@ -26,7 +26,9 @@
                                 <router-link :to="`/detail/${blog.id}`">{{blog.description}}</router-link>
                             </p>
                             <div class="btns">
-                                <x-button class="my-btn">编辑</x-button>
+                                <router-link :to="`/edit/${blog.id}`">
+                                    <x-button class="my-btn">编辑</x-button>
+                                </router-link>
                                 <x-button class="my-btn">删除</x-button>
                             </div>
                         </div>

@@ -4,18 +4,24 @@
             <x-header></x-header>
             <x-content>
                 <div class="content-inner">
+                    <div class="user">
+                        <div class="avatar-wrapper">
+                            <router-link :to="`/user/${user.id}`"><img :src="user.avatar"></router-link>
+                        </div>
+                        <p class="username">
+                            <router-link :to="`/user/${user.id}`">{{user.username}}</router-link>
+                        </p>
+                    </div>
                     <div v-for="(blog,index) in indexBlogs" class="blog-info">
-                        <div class="user">
-                            <router-link :to="`/user/${blog.user.id}`"><img :src="blog.user.avatar"></router-link>
-                            <p>
-                                <router-link :to="`/user/${blog.user.id}`">{{blog.user.username}}</router-link>
-                            </p>
+                        <div class="time">
+                            <h2>{{friendlyDate(blog.createdAt,"full").date}}</h2>
+                            <p>{{friendlyDate(blog.createdAt,"full").month}}月</p>
+                            <span>{{friendlyDate(blog.createdAt,"full").year}}</span>
                         </div>
                         <div class="blog-content">
                             <h3>
                                 <router-link :to="`/detail/${blog.id}`">{{blog.title}}</router-link>
                             </h3>
-                            <span>发布于 {{friendlyDate(blog.createdAt)}}</span>
                             <p>
                                 <router-link :to="`/detail/${blog.id}`">{{blog.description}}</router-link>
                             </p>

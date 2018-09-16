@@ -3,55 +3,76 @@
     font-family: $font;
     min-width: 250px;
     .content-inner {
+        >.user {
+            width: 100%;
+            display: flex;
+            padding: 20px 0;
+            justify-content: center;
+            align-items: stretch;
+            >.avatar-wrapper {
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+            }
+            >.username {
+                width: 80%;
+                font-size: 16px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 20px;
+                color: $bcolor3;
+            }
+        }
         >.blog-info {
             display: flex;
             justify-content: center;
             align-items: stretch;
             border-bottom: 1px solid #ddd;
             background: #eee;
-            >.user {
+            >.time {
                 width: 20%;
-                display: flex;
-                padding-bottom: 30px;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                flex-shrink: 0;
-                img {
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    vertical-align: middle;
-                    margin: 10px auto 0;
+                color: #999;
+                text-align: center;
+                padding-bottom: 5px;
+                >h2 {
+                    margin: 10px 0;
                 }
-                p {
-                    font-size: 16px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                >p {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+                >span {
+                    font-size: 14px;
                 }
             }
             >.blog-content {
                 width: 80%;
                 background: #fff;
-                padding: 10px 0;
+                padding: 20px 0 10px;
                 h3 {
                     margin-left: 20px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                }
-                span {
-                    margin-left: 20px;
-                    color: #ccc;
-                    font-size: 12px;
+                    color: #333;
                 }
                 p {
-                    margin-left: 20px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     font-size: 14px;
+                    margin: 20px 20px;
                 }
             }
         }

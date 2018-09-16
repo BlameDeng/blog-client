@@ -1,8 +1,14 @@
-function friendlyDate(dateStr) {
+function friendlyDate(dateStr, type) {
     let dateObj;
     if (typeof dateStr === 'object') {
         dateObj = dateStr;
     } else { dateObj = new Date(dateStr); }
+    if (type === 'full') {
+        let year = dateObj.getFullYear();
+        let month = dateObj.getMonth() + 1;
+        let date = dateObj.getDate();
+        return { year, month, date };
+    }
     let time = dateObj.getTime();
     let now = Date.now(); //new Date().getTime()
     let space = now - time; //单位是毫秒

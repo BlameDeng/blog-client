@@ -1,6 +1,6 @@
 <template>
     <div id="register">
-        <x-layout x-height="100vh">
+        <x-layout x-min-height="100vh">
             <x-header tips-txt="register"></x-header>
             <x-content class="x-content">
                 <div class="content-inner">

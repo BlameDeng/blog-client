@@ -21,6 +21,12 @@ export default {
         }
     },
     created() {
+        if (this.$route.query.page) {
+            let defaultPage = this.$route.query.page
+            this.currentIndex = defaultPage - 1;
+            this.updateIndexBlogs(defaultPage - 1);
+        }
+
         this.getIndexBlogs().then(res => {
             this.indexBlogs = res.data;
             this.totalPage = +res.totalPage;
@@ -36,6 +42,7 @@ export default {
             this.getIndexBlogs(index + 1).then(res => {
                 this.indexBlogs = res.data;
                 this.totalPage = +res.totalPage;
+                this.$router.push({ path: '/', query: { page: index + 1 } });
                 this.watchCurrentIndex();
             })
         },

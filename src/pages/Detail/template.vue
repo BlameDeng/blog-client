@@ -9,7 +9,7 @@
                         <div class="blog-title">
                             <h3>{{blog.title}}</h3>
                             <span class="username">
-                                <router-link to="/">{{user.username}}</router-link>
+                                <router-link :to="`/user/${user.id}`">{{user.username}}</router-link>
                             </span>
                             <span class="created-at">发布于 {{friendlyDate(blog.createdAt)}}</span>
                         </div>

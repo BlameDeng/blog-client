@@ -1,6 +1,6 @@
 <template>
     <div id="login">
-        <x-layout x-height="100vh">
+        <x-layout x-min-height="100vh">
             <x-header tips-txt="login"></x-header>
             <x-content class="x-content">
                 <div class="content-inner">

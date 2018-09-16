@@ -1,10 +1,13 @@
 import Toast from '../../components/toast';
+import Input from '../../components/input';
+import Button from '../../components/button';
 import Vue from 'vue';
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 export default {
+    name: 'RegisterPage',
+    components: { 'x-input': Input, 'x-button': Button },
     data() {
         return {
-            msg: 'Welcome to Your Vue.js App',
             ToastConstructor: Vue.extend(Toast),
             username: '',
             password: ''

@@ -1,7 +1,11 @@
 import Toast from '../../components/toast';
+import Input from '../../components/input';
+import Button from '../../components/button';
 import Vue from 'vue';
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 export default {
+    name: 'LoginPage',
+    components: { 'x-input': Input, 'x-button': Button },
     data() {
         return {
             ToastConstructor: Vue.extend(Toast),
@@ -15,8 +19,7 @@ export default {
             isLogin: state => state.auth.isLogin
         })
     },
-    created() {
-    },
+    created() {},
     methods: {
         ...mapActions(['login']),
         onLogin() {

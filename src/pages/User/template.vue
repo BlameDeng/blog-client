@@ -12,6 +12,7 @@
                             <router-link :to="`/user/${user.id}`">{{user.username}}</router-link>
                         </p>
                     </div>
+                    <h2>发布的文章</h2>
                     <div v-for="(blog,index) in indexBlogs" class="blog-info">
                         <div class="time">
                             <h2>{{friendlyDate(blog.createdAt,"full").date}}</h2>

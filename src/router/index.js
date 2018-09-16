@@ -19,7 +19,7 @@ const router = new Router({
 
         { path: "/login", component: Login },
 
-        { path: "/my/:userId", component: My, meta: { requiresAuth: true } },
+        { path: "/my", component: My, meta: { requiresAuth: true } },
 
         { path: "/register", component: Register },
 

@@ -2,4 +2,102 @@
 #my {
     font-family: $font;
     min-width: 250px;
+    .content-inner {
+        >.user {
+            width: 100%;
+            display: flex;
+            padding: 20px 0;
+            justify-content: center;
+            align-items: stretch;
+            >.avatar-wrapper {
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+            }
+            >.username {
+                width: 80%;
+                font-size: 16px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 20px;
+                color: $bcolor3;
+            }
+        }
+        >.blog-info {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            border-bottom: 1px solid #ddd;
+            background: #eee;
+            >.time {
+                width: 20%;
+                color: #999;
+                text-align: center;
+                padding-bottom: 5px;
+                >h2 {
+                    margin: 10px 0;
+                }
+                >p {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+                >span {
+                    font-size: 14px;
+                }
+            }
+            >.blog-content {
+                width: 80%;
+                background: #fff;
+                padding: 20px 0 5px;
+                >h3 {
+                    margin-left: 20px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #333;
+                }
+                >p {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                    margin: 20px 20px;
+                }
+                >.btns {
+                    margin-left: 20px;
+                    >.my-btn {
+                        padding: 0.5em;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .page-index-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            margin-top: 5px;
+            >li {
+                margin: 5px;
+                cursor: pointer;
+                &.active {
+                    color: red;
+                }
+            }
+        }
+    }
 }

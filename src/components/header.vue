@@ -73,7 +73,7 @@
                 this.onPushToIndex();
             },
             onPushToMy() {
-                this.$router.push({ path: `/my/${this.user.id}`, query: { redirect: this.user.id } });
+                this.$router.push({ path: `/my`, query: { redirect: this.user.id } });
             },
             onPushToLogin() {
                 this.$router.push({ path: '/login' });

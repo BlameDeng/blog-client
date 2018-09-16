@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://blog-server.hunger-valley.com';
+axios.defaults.baseURL = 'https://blog-server.hunger-valley.com';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.withCredentials = true;
 //如果在发送来自其他域的XMLHttpRequest请求之前，未设置withCredentials 为true，

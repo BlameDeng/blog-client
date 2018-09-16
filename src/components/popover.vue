@@ -105,11 +105,9 @@
     .content-wrapper {
         border: 1px solid #fff;
         border-radius: 4px;
-        // box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
         background: #fff;
         padding: .5em 1em;
-
         max-width: 20em;
         word-break: break-all;
         position: absolute;

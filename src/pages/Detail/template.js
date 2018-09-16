@@ -23,6 +23,5 @@ export default {
     },
     methods: {
         ...mapActions(['getDetail']),
-    },
-    mounted() {},
+    }
 }

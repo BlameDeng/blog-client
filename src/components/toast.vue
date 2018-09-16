@@ -120,8 +120,6 @@
         &.toast-position-top {
             top: 75px;
             >.toast {
-                // border-top-left-radius: 0;
-                // border-top-right-radius: 0;
                 animation: slide-down $animation-duration linear;
             }
         }
@@ -174,12 +172,8 @@
             align-items: center;
             background: #fff;
             border-radius: 4px;
-            // box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
             padding: 25px 16px;
             >.slot-wrapper {
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
                 vertical-align: middle;
             }
             >.line {

@@ -19,7 +19,6 @@ export default {
             isLogin: state => state.auth.isLogin
         })
     },
-    created() {},
     methods: {
         ...mapActions(['login']),
         onLogin() {
@@ -60,8 +59,5 @@ export default {
                 propsData: { autoClose: 3, type: type, info: msg, closeButton: false }
             }).$mount(div);
         }
-    },
-    mounted() {
-
-    },
+    }
 }

@@ -71,8 +71,8 @@ export default {
         deleteConfirm() {
             this.isMask = false;
             this.deleteBlog({ blogId: this.deleteBlogId }).then(res => {
-                this.showToast('success',res.msg);
-                this.indexBlogs=this.indexBlogs.filter(blog=>blog.id!==this.deleteBlogId);
+                this.showToast('success', res.msg);
+                this.indexBlogs = this.indexBlogs.filter(blog => blog.id !== this.deleteBlogId);
             }).catch(() => {});
         },
         pre() {

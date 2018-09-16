@@ -64,7 +64,6 @@
                 } else if (this.tipsTxt === 'register') { return `注册 LET'S SHARE`; } else if (this.tipsTxt === 'index') { return `加入 LET'S SHARE 分享前端咨询` }
             }
         },
-        created() {},
         methods: {
             ...mapActions(['logout']),
             onPushToIndex() { this.$router.push({ path: '/' }) },
@@ -81,12 +80,6 @@
             onPushToRegister() {
                 this.$router.push({ path: '/register' });
             },
-        },
-        mounted() {
-            this.$nextTick(() => {
-
-            })
-
         },
     }
 </script>
@@ -140,7 +133,6 @@
                     cursor: pointer;
                     margin-right: 20px;
                 }
-
             }
         }
         &.login-register {

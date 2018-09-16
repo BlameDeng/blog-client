@@ -14,7 +14,6 @@ export default {
         }
     },
     computed: {
-        local() {},
         ...mapState({
             count: (state) => { return state.count },
             num: 'number',

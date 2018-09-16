@@ -36,15 +36,12 @@
     .row {
         display: flex;
         flex-wrap: wrap;
-
         &.align-left {
             justify-content: flex-start;
         }
-
         &.align-center {
             justify-content: center;
         }
-
         &.align-right {
             justify-content: flex-end;
         }

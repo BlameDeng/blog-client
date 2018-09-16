@@ -36,7 +36,7 @@ export default {
         }).catch(() => {});
     },
     methods: {
-        ...mapActions(['createBlog', 'getDetail', 'updateBlog']),
+        ...mapActions(['getDetail', 'updateBlog']),
         onUpdateBlog() {
             this.updateBlog({ blogId: this.blogId, title: this.title, description: this.description, content: this.content, atIndex: this.atIndex }).then(
                 res => {

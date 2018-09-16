@@ -48,9 +48,6 @@
         font-family:$font;
         font-size: $font-size;
         color: $color;
-        >:not(:last-child) {
-            // margin-right: 0.5em;
-        }
         >input {
             height: $height;
             width: 100%;

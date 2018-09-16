@@ -17,7 +17,6 @@
                     </div>
                     <p>已有账号?<span @click="onPushToLogin">立即登录</span></p>
                 </div>
-
             </x-content>
             <x-footer>
             </x-footer>
